@@ -15,8 +15,8 @@ public class Facebook_login_logout {
 		
 		Scanner input=new Scanner(System.in);
 		
-		//	Location=input.nextLine();
-		//System.out.print("Enter the location address of the browser executable file: ");
+		Location=input.nextLine();
+		System.out.print("Enter the location address of the browser executable file: ");
 		
 		System.out.print("Enter the webaddress you want to visit: ");
 		Address=input.nextLine();
@@ -29,7 +29,7 @@ public class Facebook_login_logout {
 	
 		
 		// Sets the path for the firefox driver
-		System.setProperty("webdriver.Firefox.driver", "C:\\Users\\Shah Zaib\\Downloads\\Compressed\\firefox.exe");
+		System.setProperty("webdriver.Firefox.driver", "Location");
 		// Creates a driver object for firefox
 		WebDriver driver_xpath = new FirefoxDriver();
 
@@ -65,7 +65,6 @@ public class Facebook_login_logout {
 		driver_CSS.findElement(By.cssSelector("div[id='userNavigationLabel']")).click();
 		//Waits for the drop down menu to show
 		driver_CSS.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		// (Not in english) usernavigation block jaha logout hay us main 16 li k blocks hain ,  logout wala 12 main hay , kholo to a aata hay , phir 2 span span aatay hay , yeh address hay button ka
 		// logout button-->click
 		driver_CSS.findElement(By.xpath("//li[12]/a/span/span")).click();
 		//Close
